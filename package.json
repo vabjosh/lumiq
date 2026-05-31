@@ -1,0 +1,14 @@
+{
+  "name": "lumiq",
+  "version": "1.0.0",
+  "description": "LUMIQ — daily content agents + control panel SPA",
+  "type": "module",
+  "scripts": {
+    "morning": "node src/morning-agent.js",
+    "evening": "node src/evening-agent.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
+  },
+  "engines": { "node": ">=20.0.0" }
+}

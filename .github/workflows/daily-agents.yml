@@ -1,0 +1,106 @@
+name: LUMIQ Daily Agents
+
+on:
+  schedule:
+    # Morning quote — 7:00 AM UTC (adjust to your timezone)
+    - cron: "0 7 * * *"
+    # Evening news — 7:00 PM UTC
+    - cron: "0 19 * * *"
+  # Also allow manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: "Which agent to run"
+        required: true
+        default: "morning"
+        type: choice
+        options:
+          - morning
+          - evening
+          - both
+
+jobs:
+  morning-agent:
+    name: 🌅 Morning Quote Post
+    runs-on: ubuntu-latest
+    # Run on 7am schedule OR manual trigger for morning/both
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *') ||
+      (github.event_name == 'workflow_dispatch' && (inputs.agent == 'morning' || inputs.agent == 'both'))
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run morning agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+        run: node src/morning-agent.js
+
+      - name: Commit updated feed
+        run: |
+          git config --local user.email "agent@lumiq.app"
+          git config --local user.name "LUMIQ Agent"
+          git add content/
+          git diff --staged --quiet || git commit -m "🌅 Morning post — $(date +'%Y-%m-%d')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  evening-agent:
+    name: 🌆 Evening News Post
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
+      (github.event_name == 'workflow_dispatch' && (inputs.agent == 'evening' || inputs.agent == 'both'))
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run evening agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+        run: node src/evening-agent.js
+
+      - name: Commit updated feed
+        run: |
+          git config --local user.email "agent@lumiq.app"
+          git config --local user.name "LUMIQ Agent"
+          git add content/
+          git diff --staged --quiet || git commit -m "🌆 Evening post — $(date +'%Y-%m-%d')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

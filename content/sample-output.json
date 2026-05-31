@@ -1,0 +1,32 @@
+{
+  "_note": "This is a SAMPLE showing what the agents produce. Real output is generated fresh daily.",
+  
+  "morning_sample": {
+    "date": "2026-05-31",
+    "type": "morning_quote",
+    "quote": "The mind is not a vessel to be filled, but a fire to be kindled.",
+    "author": "Plutarch",
+    "author_role": "Greek philosopher & biographer, 46–119 AD",
+    "theme": "curiosity",
+    "reflection": "On this Sunday, before the week begins, remember that learning was never about accumulating facts — it was always about awakening something. Every question you ask today is kindling. Every idea you explore is a spark. What will you set alight this week?",
+    "caption_linkedin": "🌅 Good morning.\n\n\"The mind is not a vessel to be filled, but a fire to be kindled.\"\n— Plutarch, Greek philosopher, 46–119 AD\n\nWe've spent decades building education systems that treat minds like storage. Fill them with facts. Test retention. Move on.\n\nPlutarch understood something 2,000 years ago that we're only now remembering: the goal was never information transfer. It was ignition.\n\nThe learner who asks one burning question will always outpace the one who memorizes a thousand answers.\n\nThis week, ask more questions than you answer. Explore one thing purely because it fascinates you. Let curiosity lead.\n\nThat's what LUMIQ is built for — not filling minds, but lighting them.\n\nHappy Sunday. 🌿\n\n#Learning #Growth #Curiosity #LUMIQ #MondayMindset #Wisdom #LifelongLearning",
+    "caption_x": "\"The mind is not a vessel to be filled, but a fire to be kindled.\"\n— Plutarch (46–119 AD)\n\nStop trying to fill yours. Start trying to light it. 🔥\n\n#LUMIQ #Learning #Wisdom",
+    "caption_instagram": "🌅 Sunday morning thought.\n\n\"The mind is not a vessel to be filled,\nbut a fire to be kindled.\"\n\n— Plutarch, Greek philosopher\n\nLearning was never meant to feel like storage. It was meant to feel like discovery. Like that moment something clicks and suddenly you see the world differently.\n\nToday, let something kindle you. A question, a rabbit hole, a topic you've always been curious about.\n\nThat spark is the whole point. 🌿\n\n#LUMIQ #Learning #Growth #SundayMorning #Wisdom #Inspiration #Curiosity #MindsetShift #LifelongLearning #KnowledgeIsPower"
+  },
+
+  "evening_sample": {
+    "date": "2026-05-31",
+    "type": "evening_news",
+    "headline": "Scientists restore partial vision in blind patients using AI-powered retinal implants",
+    "source": "Nature Medicine",
+    "summary": "A team of researchers has successfully restored functional vision to six patients with complete retinal blindness using a new generation of AI-enhanced implants that translate camera input into electrical signals the brain can interpret. Patients reported being able to recognize faces and navigate unfamiliar spaces independently for the first time in years.",
+    "why_it_matters": "This represents the first time AI has been used not to automate human tasks, but to restore a fundamental human sense — signaling a new era where technology heals rather than replaces.",
+    "category": "science",
+    "quote": "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.",
+    "quote_author": "Albert Einstein",
+    "quote_author_role": "Theoretical physicist & Nobel Laureate",
+    "caption_linkedin": "🌆 Tonight's good news from the world:\n\nScientists have restored partial vision to six blind patients using AI-powered retinal implants — patients who hadn't seen faces in years now can.\n\nAnd this quote from Einstein feels made for this moment:\n\n\"The most beautiful thing we can experience is the mysterious.\"\n\nWe often talk about AI replacing human capability. Today, we saw something different: AI restoring it.\n\nThese researchers spent years in the mystery — the unknown territory between neuroscience, optics, and machine learning — because they believed something beautiful was on the other side.\n\nThey were right.\n\nIf you needed a reminder today that science is still doing extraordinary things for ordinary people — this is it. 🌿\n\n#GoodNews #Science #AI #LUMIQ #HumanProgress #Innovation #Hope",
+    "caption_x": "Today: scientists restored vision to blind patients using AI retinal implants. Patients seeing faces again for the first time in years.\n\nEinstein said it best: \"The most beautiful thing we can experience is the mysterious.\"\n\nThis is what AI is for. 🌿 #LUMIQ #GoodNews",
+    "caption_instagram": "🌆 End your day with this.\n\nToday, six people who had been completely blind saw faces again.\n\nAI-powered retinal implants. Years of research. One extraordinary result.\n\nEinstein once said:\n\"The most beautiful thing we can experience is the mysterious.\"\n\nThe researchers who built this lived in that mystery for years — and today they brought six people back to the light.\n\nThe world is still making miracles. We just have to look for them.\n\nGood night. 🌿\n\n#LUMIQ #GoodNews #Science #Hope #HumanProgress #AI #Inspiration #EndYourDayRight #PositiveNews #Gratitude"
+  }
+}
